@@ -20,6 +20,7 @@ class _MyFormPageState extends State<MyFormPage> {
   String pdbClass = 'A';
   List<String> listPBDClass = ['A', 'B', 'C', 'D', 'E', 'F', 'KI'];
   bool _switchValue = false;
+  String degree = "";
 
   @override
   Widget build(BuildContext context) {
@@ -118,6 +119,7 @@ class _MyFormPageState extends State<MyFormPage> {
                             undergraduateDegree = value!;
                             if (value){
                               masterDegree = diplomaDegree = doctorDegree = false;
+                              degree = "Undergraduate";
                             }
                           });
                         },
@@ -130,6 +132,7 @@ class _MyFormPageState extends State<MyFormPage> {
                             diplomaDegree = value!;
                             if (value){
                               masterDegree = undergraduateDegree = doctorDegree = false;
+                              degree = "Diploma";
                             }
                           });
                         },
@@ -142,6 +145,7 @@ class _MyFormPageState extends State<MyFormPage> {
                             masterDegree = value!;
                             if (value){
                               diplomaDegree = undergraduateDegree = doctorDegree = false;
+                              degree = "Master";
                             }
                           });
                         },
@@ -154,6 +158,7 @@ class _MyFormPageState extends State<MyFormPage> {
                             doctorDegree = value!;
                             if (value){
                               masterDegree = undergraduateDegree = diplomaDegree = false;
+                              degree = "Doctorate";
                             }
                           });
                         },
@@ -227,11 +232,30 @@ class _MyFormPageState extends State<MyFormPage> {
                             elevation: 15,
                             child: Container(
                               child: ListView(
+                                // mainAxisAlignment: MainAxisAlignment.center,
                                 padding: const EdgeInsets.only(top: 20, bottom: 20),
                                 shrinkWrap: true,
                                 children: <Widget>[
-                                  Center(child: Text('Hello $_fullName, age $age, PBD Class $pdbClass')),
+                                  const Center(child: Text('Data Information')),
                                   const SizedBox(height: 20),
+                                  Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      children:[
+                                        Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                            children:[
+                                              Text('Name: $_fullName'),
+                                              Text('Age: $age'),
+                                              Text('Degree: $degree'),
+                                              Text('PBD Class: $pdbClass'),
+                                              Text('Practice Mode: $_switchValue'),
+                                            ]),
+                                      ]
+                                    )
+                                  ),
+
                                   // TODO: Display the information obtained from the form
                                   TextButton(
                                     onPressed: () {
@@ -239,7 +263,7 @@ class _MyFormPageState extends State<MyFormPage> {
                                     },
                                     child: const Text('Return'),
                                   ),
-                                ],
+                                  ],
                               ),
                             ),
                           );
