@@ -230,7 +230,7 @@ class _MyFormPageState extends State<MyFormPage> {
                                 padding: const EdgeInsets.only(top: 20, bottom: 20),
                                 shrinkWrap: true,
                                 children: <Widget>[
-                                  Center(child: Text('Hello $_fullName')),
+                                  Center(child: Text('Hello $_fullName, age $age, PBD Class $pdbClass')),
                                   const SizedBox(height: 20),
                                   // TODO: Display the information obtained from the form
                                   TextButton(
