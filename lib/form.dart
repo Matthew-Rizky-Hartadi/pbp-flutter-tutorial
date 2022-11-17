@@ -1,4 +1,5 @@
-import 'package:pbp_flutter/main.dart';
+import 'package:pbp_flutter/page/main.dart';
+import 'package:pbp_flutter/page/to_do_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -50,6 +51,16 @@ class _MyFormPageState extends State<MyFormPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyFormPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('To Do'),
+              onTap: () {
+                // Route the menu to the to do page
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ToDoPage()),
                 );
               },
             ),
@@ -230,41 +241,39 @@ class _MyFormPageState extends State<MyFormPage> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             elevation: 15,
-                            child: Container(
-                              child: ListView(
-                                // mainAxisAlignment: MainAxisAlignment.center,
-                                padding: const EdgeInsets.only(top: 20, bottom: 20),
-                                shrinkWrap: true,
-                                children: <Widget>[
-                                  const Center(child: Text('Data Information')),
-                                  const SizedBox(height: 20),
-                                  Padding(
-                                    padding: const EdgeInsets.all(15.0),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children:[
-                                        Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                            children:[
-                                              Text('Name: $_fullName'),
-                                              Text('Age: $age'),
-                                              Text('Degree: $degree'),
-                                              Text('PBD Class: $pdbClass'),
-                                              Text('Practice Mode: $_switchValue'),
-                                            ]),
-                                      ]
-                                    )
-                                  ),
+                            child: ListView(
+                              // mainAxisAlignment: MainAxisAlignment.center,
+                              padding: const EdgeInsets.only(top: 20, bottom: 20),
+                              shrinkWrap: true,
+                              children: <Widget>[
+                                const Center(child: Text('Data Information')),
+                                const SizedBox(height: 20),
+                                Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children:[
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                          children:[
+                                            Text('Name: $_fullName'),
+                                            Text('Age: $age'),
+                                            Text('Degree: $degree'),
+                                            Text('PBD Class: $pdbClass'),
+                                            Text('Practice Mode: $_switchValue'),
+                                          ]),
+                                    ]
+                                  )
+                                ),
 
-                                  // TODO: Display the information obtained from the form
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: const Text('Return'),
-                                  ),
-                                  ],
-                              ),
+                                // TODO: Display the information obtained from the form
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Return'),
+                                ),
+                                ],
                             ),
                           );
                         },
