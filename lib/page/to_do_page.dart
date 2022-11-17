@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:pbp_flutter/model/to_do.dart';
-import "package:pbp_flutter/form.dart";
-import 'package:pbp_flutter/page/main.dart';
+import "package:pbp_flutter/page/form.dart";
+import 'package:pbp_flutter/main.dart';
 
 class ToDoPage extends StatefulWidget {
   const ToDoPage({Key? key}) : super(key: key);

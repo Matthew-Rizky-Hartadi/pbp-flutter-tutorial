@@ -1,4 +1,4 @@
-import 'package:pbp_flutter/page/main.dart';
+import 'package:pbp_flutter/main.dart';
 import 'package:pbp_flutter/page/to_do_page.dart';
 import 'package:flutter/material.dart';
 
